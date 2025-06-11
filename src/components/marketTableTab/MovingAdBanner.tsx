@@ -53,7 +53,7 @@ const ads = [
 
 export const MovingAdBanner: FC = () => {
   return (
-    <div className="relative overflow-hidden bg-transparent py-6 border-t border-b border-white/10">
+    <div className="relative overflow-hidden bg-gradient-to-b from-[#001010] via-[#082c2b] to-[#001010]  py-6 border-t border-b border-white/10">
         
       <div className="marquee-wrapper flex items-center h-10">
         <div className="marquee-content flex items-center gap-12">

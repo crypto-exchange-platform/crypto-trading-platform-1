@@ -22,7 +22,7 @@ const promotions = [
 
 export const HeroSpinPrize: FC = () => {
   return (
-    <section className="w-full bg-transparent text-white">
+    <section className="w-full bg-transparemt text-white">
       <div className="container mx-auto px-4 py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div className="space-y-6">
           <h1 className="text-4xl font-bold leading-tight lg:text-5xl">
