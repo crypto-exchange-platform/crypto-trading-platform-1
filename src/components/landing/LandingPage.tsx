@@ -1,7 +1,9 @@
 import { Header } from "../header/Header";
 import { HeroSpinPrize } from "../heroSection/HeroSection";
 import { MarketTableTabs } from "../marketTableTab/MarketTable";
-
+import { CopyTradingShowcase } from "../tradingShowcase/TradingShowCase";
+import { StartCryptoJourney } from "../startCryptoJourney/StartCryptoJourney";
+import { TrustSafetySection } from "../trustSafetySection.tsx/TrustSafetySection";
 
 function LandingPage() {
     return (
@@ -9,6 +11,9 @@ function LandingPage() {
             <Header/>
             <HeroSpinPrize/>
             <MarketTableTabs/>
+            <CopyTradingShowcase/>
+            <StartCryptoJourney/>
+            <TrustSafetySection/>
         </div>
     );
 }

@@ -139,7 +139,7 @@ export const MarketTableTabs: FC = () => {
 
   return (
     
-    <section className="w-full text-white  bg-gradient-to-b from-[#001010] to-black ">
+    <section className="w-full text-white   bg-gradient-to-b from-[#001010] via-[#082c2b] to-[#001010]  ">
                 <MovingAdBanner />
 
       <div className="container mx-auto px-4 pt-6">
