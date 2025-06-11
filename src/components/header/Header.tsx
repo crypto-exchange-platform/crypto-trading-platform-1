@@ -2,14 +2,20 @@ import { FC } from "react";
 import { Button } from "../ui/button";
 
 const NAV_ITEMS = [
-  { label: "Buy crypto", href: "#" },
-  { label: "Markets", href: "#" },
-  { label: "Trade", href: "#" },
-  { label: "Futures", href: "#" },
-  { label: "Earn", href: "#" },
+  { label: "Buy crypto", href: "#hero" },
+  { label: "Markets", href: "#market" },
+  { label: "Trade", href: "#copy" },
+  { label: "Futures", href: "#journey" },
+  { label: "Earn", href: "#faq" },
 ];
 
-export const Header: FC = () => {
+
+interface HeaderProps {
+  onLogin: () => void;
+  onSignup: () => void;
+}
+
+export const Header: FC<HeaderProps> = ({ onLogin, onSignup }) => {
   return (
     <header className="w-full bg-transparent text-white p-2">
       <div className="container mx-auto flex items-center justify-between bg-gradient-to-b from-[#001010] via-[#082c2b] to-[#0a1f1c] rounded-md px-4 py-4">
@@ -31,10 +37,10 @@ export const Header: FC = () => {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button variant="ghost" className="text-sm font-medium">
+          <Button variant="ghost" className="text-sm font-medium" onClick={onLogin}>
             Log in
           </Button>
-          <Button className="bg-cyan-400 text-black hover:bg-cyan-500">
+          <Button className="bg-cyan-400 text-black hover:bg-cyan-500" onClick={onSignup}>
             Sign up
           </Button>
         </div>

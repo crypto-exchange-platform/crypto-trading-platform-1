@@ -14,3 +14,9 @@
     rgb(1, 19, 1) 100%
   ); */
 }
+
+
+ html {
+  scroll-behavior: smooth;
+}
+ 
