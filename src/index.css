@@ -7,10 +7,10 @@
   font-weight: 300;
 
   color-scheme: light dark;
-  background: linear-gradient(
+  /* background: linear-gradient(
     180deg,
     rgb(5, 19, 1) 12%,
     rgb(1, 27, 20) 50%,
     rgb(1, 19, 1) 100%
-  );
+  ); */
 }
