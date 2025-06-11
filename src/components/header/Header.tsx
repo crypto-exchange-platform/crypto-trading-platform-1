@@ -11,8 +11,8 @@ const NAV_ITEMS = [
 
 export const Header: FC = () => {
   return (
-    <header className="w-full bg-transparent text-white">
-      <div className="container mx-auto flex items-center justify-between px-4 py-4">
+    <header className="w-full bg-transparent text-white p-2">
+      <div className="container mx-auto flex items-center justify-between bg-gradient-to-b from-[#001010] via-[#082c2b] to-[#0a1f1c] rounded-md px-4 py-4">
         <a href="/" aria-label="Homepage" className="flex items-center gap-2">
           <img src="/ic_iotx.svg" alt="Token logo" className="h-10 w-10" />
           <span className="text-lg font-semibold tracking-tight">Token</span>
