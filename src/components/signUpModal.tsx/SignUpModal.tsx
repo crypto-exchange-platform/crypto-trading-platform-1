@@ -82,7 +82,7 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose }) => {
           dateOfBirth: form.birthdate,
           source:
             window.location.hostname === "localhost"
-              ? "landing.salesvault.vc" //change
+              ? "landing.salesvault.vc" //change here
               : window.location.hostname,
         }
       );
