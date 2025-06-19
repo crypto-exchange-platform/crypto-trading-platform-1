@@ -3,9 +3,10 @@ import axios from "axios";
 
 interface SignupModalProps {
   onClose: () => void;
+  onSignupSuccess: () => void;
 }
 
-export const SignupModal: FC<SignupModalProps> = ({ onClose }) => {
+export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) => {
   const [countries, setCountries] = useState<any[]>([]);
   const [dialCodes, setDialCodes] = useState<any[]>([]);
   const [error, setError] = useState("");
@@ -83,12 +84,12 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose }) => {
               : window.location.hostname,
         }
       );
-      onClose();
+      onClose();           // hide signup
+      onSignupSuccess();   // show login
     } catch (err: any) {
       setError(err.response?.data?.message || "Signup failed.");
     }
-  };
-
+  }; 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 overflow-auto">
       <div className="bg-gradient-to-b from-[#0a1f1c] via-[#082c2b] to-[#0a1f1c] w-full max-w-xl p-6 rounded-md shadow-lg relative">

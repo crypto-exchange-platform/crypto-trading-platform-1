@@ -15,8 +15,13 @@ function LandingPage() {
 
   return (
     <>
-      {modal === "login" && <LoginModal onClose={() => setModal(null)} />}
-      {modal === "signup" && <SignupModal onClose={() => setModal(null)} />}
+       {modal === "login" && <LoginModal onClose={() => setModal(null)} />}
+      {modal === "signup" && (
+        <SignupModal
+          onClose={() => setModal(null)}
+          onSignupSuccess={() => setModal("login")}
+        />
+      )} 
 
       <div className="flex flex-col bg-gradient-to-b from-[#0a1f1c] via-[#082c2b] to-[#001010]">
         <Header
