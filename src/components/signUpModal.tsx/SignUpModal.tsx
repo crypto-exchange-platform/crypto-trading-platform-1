@@ -68,7 +68,7 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) 
     try {
       setLoading(true);
       const createRes = await axios.post<string>(
-        "https://api.salesvault.vc/identity/api/clients/create-client-via-web",
+        "https://api.salesvault.vc/api/clients/create-client-via-web",
         {
           firstName: form.firstName,
           lastName: form.lastName,
