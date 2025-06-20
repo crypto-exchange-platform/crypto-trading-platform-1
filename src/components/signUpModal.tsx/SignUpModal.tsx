@@ -1,8 +1,6 @@
 import { FC, ChangeEvent, FormEvent, useEffect, useState } from "react";
 import axios from "axios";
 
-const AFFILIATE = "salesvault.vc";
-
 interface SignupModalProps {
   onClose: () => void;
   onSignupSuccess: () => void;
@@ -11,8 +9,7 @@ interface SignupModalProps {
 export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) => {
   const [countries, setCountries] = useState<any[]>([]);
   const [dialCodes, setDialCodes] = useState<any[]>([]);
-  const [error, setError] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -28,19 +25,21 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) 
 
   useEffect(() => {
     fetch("https://api.salesvault.vc/api/countries")
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(setCountries);
     fetch("https://api.salesvault.vc/api/countries/dial-codes")
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(setDialCodes);
   }, []);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const isValidEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  const isStrongPassword = (pass: string) => /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=]).{8,}$/.test(pass);
+  const isValidEmail = (email: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const isStrongPassword = (pass: string) =>
+    /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=]).{8,}$/.test(pass);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -57,18 +56,18 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) 
       return;
     }
     if (!isStrongPassword(form.password)) {
-      setError("Password must be 8+ chars, include number & special char");
+      setError(
+        "Password must be 8+ chars, include number & special char"
+      );
       return;
     }
-
-    const isoDOB = form.birthdate
-      ? new Date(form.birthdate).toISOString().split("T")[0]
-      : null;
-
+    const isoDOB =
+      form.birthdate
+        ? new Date(form.birthdate).toISOString().split("T")[0]
+        : null;
     try {
-      setLoading(true);
-      const createRes = await axios.post<string>(
-        "https://api.salesvault.vc/api/clients/create-client-via-web",
+      await axios.post(
+        "https://api.salesvault.vc/identity/api/clients/create-client-via-web",
         {
           firstName: form.firstName,
           lastName: form.lastName,
@@ -79,24 +78,21 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) 
           country: form.country || null,
           language: form.language || null,
           dateOfBirth: isoDOB,
-          source: AFFILIATE,
+          source:
+            window.location.hostname === "localhost"
+              ? "cryptotrade.salesvault.vc"
+              : window.location.hostname,
         }
       );
-      const token = createRes.data;
-      await axios.get(`https://salesvault.vc/auth/confirm/${token}`);
-
-      onClose();
-      onSignupSuccess();
+      onClose();           
+      onSignupSuccess();   
     } catch (err: any) {
       setError(err.response?.data?.message || "Signup failed.");
-    } finally {
-      setLoading(false);
     }
-  }; 
-
+  };  
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 overflow-auto">
-      <div className="bg-gradient-to-b from-[#0a1f1c] via-[#082c2b] to-[#0a1f1c] w-full max-w-xl p-6 rounded-md shadow-lg relative">
+      <div className="bg-gradient-to-b from-[#0a1f1c] via-[#082c2b] to-[#0a1f1c] text-black w-full max-w-xl p-6 rounded-md shadow-lg relative">
         <button
           onClick={onClose}
           className="absolute right-4 top-4 text-xl cursor-pointer"
@@ -110,64 +106,39 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) 
           className="grid grid-cols-1 md:grid-cols-2 gap-4"
           onSubmit={handleSubmit}
         >
-          <input
-            name="firstName"
-            placeholder="First Name"
-            className="border p-2 rounded bg-white text-black cursor-text"
-            onChange={handleChange}
-          />
-          <input
-            name="lastName"
-            placeholder="Last Name"
-            className="border p-2 rounded bg-white text-black cursor-text"
-            onChange={handleChange}
-          />
-          <input
-            name="username"
-            placeholder="Username"
-            className="border p-2 rounded bg-white text-black cursor-text"
-            onChange={handleChange}
-          />
-          <input
-            name="email"
-            type="email"
-            placeholder="Email"
-            className="border p-2 rounded bg-white text-black cursor-text"
-            onChange={handleChange}
-          />
-          <input
-            name="phone"
-            type="tel"
-            placeholder="Phone Number"
-            className="border p-2 rounded bg-white text-black cursor-text"
-            onChange={handleChange}
-          />
-          <input
-            name="birthdate"
-            type="date"
-            className="border p-2 rounded bg-white text-black cursor-pointer"
-            onChange={handleChange}
-          />
-          <input
-            name="password"
-            type="password"
-            placeholder="Password"
-            className="border p-2 rounded bg-white text-black col-span-full cursor-text"
-            onChange={handleChange}
-          />
-          <input
-            name="language"
-            placeholder="Language"
-            className="border p-2 rounded bg-white text-black cursor-text"
-            onChange={handleChange}
-          />
+          {[
+            { name: "firstName", placeholder: "First Name" },
+            { name: "lastName", placeholder: "Last Name" },
+            { name: "username", placeholder: "Username" },
+            { name: "email", placeholder: "Email", type: "email" },
+            { name: "phone", placeholder: "Phone Number", type: "tel" },
+            { name: "birthdate", placeholder: "", type: "date" },
+            {
+              name: "password",
+              placeholder: "Password",
+              type: "password",
+              full: true,
+            },
+            { name: "language", placeholder: "Language" },
+          ].map(({ name, placeholder, type = "text", full }) => (
+            <input
+              key={name}
+              name={name}
+              type={type}
+              placeholder={placeholder}
+              className={`border p-2 rounded bg-white text-black ${
+                full ? "col-span-full" : ""
+              }`}
+              onChange={handleChange}
+            />
+          ))}
           <select
             name="dialCode"
-            className="border p-2 rounded bg-white text-black cursor-pointer"
+            className="border p-2 rounded cursor-pointer bg-white text-black"
             onChange={handleChange}
           >
             <option value="">Dial Code</option>
-            {dialCodes.map((d) => (
+            {dialCodes.map((d: any) => (
               <option key={d.code} value={d.dial_code}>
                 {d.dial_code}
               </option>
@@ -175,20 +146,18 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) 
           </select>
           <select
             name="country"
-            className="border p-2 rounded bg-white text-black col-span-full cursor-pointer"
+            className="border p-2 rounded w-full col-span-full cursor-pointer bg-white text-black"
             onChange={handleChange}
           >
             <option value="">Select Country</option>
-            {countries.map((c) => (
+            {countries.map((c: any) => (
               <option key={c.code} value={c.name}>
                 {c.name}
               </option>
             ))}
           </select>
           {error && (
-            <div className="text-red-500 text-sm col-span-full">
-              {error}
-            </div>
+            <div className="text-red-500 text-sm col-span-full">{error}</div>
           )}
           <button
             type="submit"
@@ -200,5 +169,4 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) 
       </div>
     </div>
   );
-};
- 
+}; 
