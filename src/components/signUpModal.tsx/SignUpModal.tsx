@@ -9,7 +9,8 @@ interface SignupModalProps {
 export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) => {
   const [countries, setCountries] = useState<any[]>([]);
   const [dialCodes, setDialCodes] = useState<any[]>([]);
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -25,16 +26,16 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) 
 
   useEffect(() => {
     fetch("https://api.salesvault.vc/api/countries")
-      .then((res) => res.json())
+      .then(res => res.json())
       .then(setCountries);
     fetch("https://api.salesvault.vc/api/countries/dial-codes")
-      .then((res) => res.json())
+      .then(res => res.json())
       .then(setDialCodes);
   }, []);
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
   const isValidEmail = (email: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -56,17 +57,17 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) 
       return;
     }
     if (!isStrongPassword(form.password)) {
-      setError(
-        "Password must be 8+ chars, include number & special char"
-      );
+      setError("Password must be 8+ chars, include number & special char");
       return;
     }
-    const isoDOB =
-      form.birthdate
-        ? new Date(form.birthdate).toISOString().split("T")[0]
-        : null;
+
+    const isoDOB = form.birthdate
+      ? new Date(form.birthdate).toISOString().split("T")[0]
+      : null;
+
     try {
-      await axios.post(
+      setLoading(true);
+      const createRes = await axios.post(
         "https://api.salesvault.vc/identity/api/clients/create-client-via-web",
         {
           firstName: form.firstName,
@@ -84,12 +85,19 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) 
               : window.location.hostname,
         }
       );
-      onClose();           // hide signup
-      onSignupSuccess();   // show login
+
+      const token = createRes.data as string; 
+      await axios.get(`https://salesvault.vc/auth/confirm/${token}`);
+
+      onClose();
+      onSignupSuccess();
     } catch (err: any) {
       setError(err.response?.data?.message || "Signup failed.");
+    } finally {
+      setLoading(false);
     }
   }; 
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 overflow-auto">
       <div className="bg-gradient-to-b from-[#0a1f1c] via-[#082c2b] to-[#0a1f1c] w-full max-w-xl p-6 rounded-md shadow-lg relative">
