@@ -1,15 +1,14 @@
 import { FC, useState, FormEvent } from "react";
 import axios from "axios";
 
-interface LoginModalProps {
-  onClose: () => void;
-}
-
+interface LoginModalProps { onClose: () => void; }
+ 
 export const LoginModal: FC<LoginModalProps> = ({ onClose }) => {
   const [emailOrUsername, setEmailOrUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -18,32 +17,23 @@ export const LoginModal: FC<LoginModalProps> = ({ onClose }) => {
       setError("Please fill all required fields.");
       return;
     }
-
     try {
       setLoading(true);
-      const response = await axios.post(
+      const res = await axios.post(
         "https://api.salesvault.vc/api/auth/login-for-direct",
         { emailOrUsername, password, twoFactorCode: null, rememberMe: null }
       );
-      if (response.status === 200) {
-        window.location.href =
-          "https://salesvault.vc/auth/login?returnUrl=%2F"; 
-      } else {
-        setError("Invalid credentials.");
-      }
+      if (res.status === 200) window.location.href = "https://salesvault.vc/auth/login?returnUrl=%2F";
+      else setError("Invalid credentials.");
     } catch (err: any) {
       setError(err.response?.data?.message || "Login failed.");
-    } finally {
-      setLoading(false);
-    }
+    } finally { setLoading(false); }
   };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
       <div className="bg-violet-950/40 w-full max-w-md p-6 rounded-md shadow-lg relative">
-        <button onClick={onClose} className="absolute right-4 top-4 text-xl cursor-pointer">
-          ×
-        </button>
+        <button onClick={onClose} className="absolute right-4 top-4 text-xl cursor-pointer">×</button>
         <h2 className="text-2xl font-bold mb-6 text-center text-white">Log In</h2>
         <form className="space-y-4" onSubmit={handleSubmit}>
           <input
@@ -61,11 +51,7 @@ export const LoginModal: FC<LoginModalProps> = ({ onClose }) => {
             onChange={e => setPassword(e.target.value)}
           />
           {error && <div className="text-red-500 text-sm">{error}</div>}
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-violet-950 text-white py-2 rounded hover:bg-gray-900 cursor-pointer"
-          >
+          <button type="submit" disabled={loading} className="w-full bg-violet-950 text-white py-2 rounded hover:bg-gray-900">
             {loading ? 'Logging In...' : 'Log In'}
           </button>
         </form>

@@ -1,6 +1,8 @@
 import { FC, ChangeEvent, FormEvent, useEffect, useState } from "react";
 import axios from "axios";
 
+const AFFILIATE = "salesvault.vc";
+
 interface SignupModalProps {
   onClose: () => void;
   onSignupSuccess: () => void;
@@ -37,10 +39,8 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) 
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const isValidEmail = (email: string) =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  const isStrongPassword = (pass: string) =>
-    /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=]).{8,}$/.test(pass);
+  const isValidEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const isStrongPassword = (pass: string) => /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=]).{8,}$/.test(pass);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -67,7 +67,7 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) 
 
     try {
       setLoading(true);
-      const createRes = await axios.post(
+      const createRes = await axios.post<string>(
         "https://api.salesvault.vc/identity/api/clients/create-client-via-web",
         {
           firstName: form.firstName,
@@ -79,14 +79,10 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) 
           country: form.country || null,
           language: form.language || null,
           dateOfBirth: isoDOB,
-          source:
-            window.location.hostname === "localhost"
-              ? "cryptotrade.salesvault.vc"
-              : window.location.hostname,
+          source: AFFILIATE,
         }
       );
-
-      const token = createRes.data as string; 
+      const token = createRes.data;
       await axios.get(`https://salesvault.vc/auth/confirm/${token}`);
 
       onClose();
