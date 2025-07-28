@@ -196,5 +196,39 @@
     "rights": "All rights reserved.",
     "language": "English",
     "change": "Change"
+  },
+  "login": {
+    "title": "Log In",
+    "fields": {
+      "emailOrUsername": "Email or Username",
+      "password": "Password"
+    },
+    "submit": "Log In",
+    "errors": {
+      "required": "Please fill all required fields.",
+      "failed": "Login failed."
+    }
+  },
+  "signup": {
+    "title": "Sign Up",
+    "fields": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "username": "Username",
+      "email": "Email",
+      "phone": "Phone Number",
+      "password": "Password",
+      "birthdate": "Birth Date",
+      "language": "Language",
+      "dialCode": "Dial Code",
+      "country": "Country"
+    },
+    "submit": "Sign Up",
+    "errors": {
+      "required": "Please fill all required fields.",
+      "invalidEmail": "Invalid email",
+      "weakPassword": "Password must be 8+ chars, include number & special char",
+      "failed": "Signup failed."
+    }
   }
 }

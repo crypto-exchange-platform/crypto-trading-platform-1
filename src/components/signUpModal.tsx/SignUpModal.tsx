@@ -1,4 +1,5 @@
 import { FC, ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
 
 interface SignupModalProps {
@@ -7,6 +8,7 @@ interface SignupModalProps {
 }
 
 export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) => {
+  const { t } = useTranslation();
   const [countries, setCountries] = useState<any[]>([]);
   const [dialCodes, setDialCodes] = useState<any[]>([]);
   const [error, setError] = useState("");
@@ -47,18 +49,16 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) 
     const required = ["firstName", "lastName", "username", "email", "password"];
     for (const f of required) {
       if (!form[f as keyof typeof form]) {
-        setError("Please fill all required fields.");
+        setError(t("signup.errors.required"));
         return;
       }
     }
     if (!isValidEmail(form.email)) {
-      setError("Invalid email");
+      setError(t("signup.errors.invalidEmail"));
       return;
     }
     if (!isStrongPassword(form.password)) {
-      setError(
-        "Password must be 8+ chars, include number & special char"
-      );
+      setError(t("signup.errors.weakPassword"));
       return;
     }
     const isoDOB =
@@ -87,9 +87,10 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) 
       onClose();           
       onSignupSuccess();   
     } catch (err: any) {
-      setError(err.response?.data?.message || "Signup failed.");
+      setError(err.response?.data?.message || t("signup.errors.failed"));
     }
-  };  
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 overflow-auto">
       <div className="bg-gradient-to-b from-[#0a1f1c] via-[#082c2b] to-[#0a1f1c] text-black w-full max-w-xl p-6 rounded-md shadow-lg relative">
@@ -100,26 +101,26 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) 
           ×
         </button>
         <h2 className="text-2xl font-bold mb-6 text-center text-white">
-          Sign Up
+          {t("signup.title")}
         </h2>
         <form
           className="grid grid-cols-1 md:grid-cols-2 gap-4"
           onSubmit={handleSubmit}
         >
           {[
-            { name: "firstName", placeholder: "First Name" },
-            { name: "lastName", placeholder: "Last Name" },
-            { name: "username", placeholder: "Username" },
-            { name: "email", placeholder: "Email", type: "email" },
-            { name: "phone", placeholder: "Phone Number", type: "tel" },
+            { name: "firstName", placeholder: t("signup.fields.firstName") },
+            { name: "lastName", placeholder: t("signup.fields.lastName") },
+            { name: "username", placeholder: t("signup.fields.username") },
+            { name: "email", placeholder: t("signup.fields.email"), type: "email" },
+            { name: "phone", placeholder: t("signup.fields.phone"), type: "tel" },
             { name: "birthdate", placeholder: "", type: "date" },
             {
               name: "password",
-              placeholder: "Password",
+              placeholder: t("signup.fields.password"),
               type: "password",
               full: true,
             },
-            { name: "language", placeholder: "Language" },
+            { name: "language", placeholder: t("signup.fields.language") },
           ].map(({ name, placeholder, type = "text", full }) => (
             <input
               key={name}
@@ -137,7 +138,7 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) 
             className="border p-2 rounded cursor-pointer bg-white text-black"
             onChange={handleChange}
           >
-            <option value="">Dial Code</option>
+            <option value="">{t("signup.fields.dialCode")}</option>
             {dialCodes.map((d: any) => (
               <option key={d.code} value={d.dial_code}>
                 {d.dial_code}
@@ -149,7 +150,7 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) 
             className="border p-2 rounded w-full col-span-full cursor-pointer bg-white text-black"
             onChange={handleChange}
           >
-            <option value="">Select Country</option>
+            <option value="">{t("signup.fields.country")}</option>
             {countries.map((c: any) => (
               <option key={c.code} value={c.name}>
                 {c.name}
@@ -163,10 +164,11 @@ export const SignupModal: FC<SignupModalProps> = ({ onClose, onSignupSuccess }) 
             type="submit"
             className="w-full bg-black text-white py-2 rounded col-span-full hover:bg-gray-900 cursor-pointer"
           >
-            Sign Up
+            {t("signup.submit")}
           </button>
         </form>
       </div>
     </div>
   );
-}; 
+};
+ 

@@ -140,17 +140,69 @@
       }
     ]
   },
- "footer": {
-  "links": [
-    { "title": "Unternehmen", "links": ["Über uns", "Karriere", "Blog", "Presse"] },
-    { "title": "Produkte", "links": ["Spot-Handel", "Futures", "Copy Trading", "Verdienen"] },
-    { "title": "Copy", "links": ["Top Trader", "Wie es funktioniert", "Bestenliste"] },
-    { "title": "Dienstleistungen", "links": ["Empfehlungsprogramm", "VIP Club", "Akademie"] },
-    { "title": "Recht und Compliance", "links": ["Nutzungsbedingungen", "Datenschutzrichtlinie", "Lizenzen"] },
-    { "title": "Werkzeuge", "links": ["Gebührenrechner", "API-Dokumente", "App herunterladen"] }
-  ],
-  "rights": "Alle Rechte vorbehalten.",
-  "language": "Deutsch",
-  "change": "Ändern"
-}
+  "footer": {
+    "links": [
+      {
+        "title": "Unternehmen",
+        "links": ["Über uns", "Karriere", "Blog", "Presse"]
+      },
+      {
+        "title": "Produkte",
+        "links": ["Spot-Handel", "Futures", "Copy Trading", "Verdienen"]
+      },
+      {
+        "title": "Copy",
+        "links": ["Top Trader", "Wie es funktioniert", "Bestenliste"]
+      },
+      {
+        "title": "Dienstleistungen",
+        "links": ["Empfehlungsprogramm", "VIP Club", "Akademie"]
+      },
+      {
+        "title": "Recht und Compliance",
+        "links": ["Nutzungsbedingungen", "Datenschutzrichtlinie", "Lizenzen"]
+      },
+      {
+        "title": "Werkzeuge",
+        "links": ["Gebührenrechner", "API-Dokumente", "App herunterladen"]
+      }
+    ],
+    "rights": "Alle Rechte vorbehalten.",
+    "language": "Deutsch",
+    "change": "Ändern"
+  },
+  "login": {
+    "title": "Anmelden",
+    "fields": {
+      "emailOrUsername": "E-Mail oder Benutzername",
+      "password": "Passwort"
+    },
+    "submit": "Anmelden",
+    "errors": {
+      "required": "Bitte füllen Sie alle erforderlichen Felder aus.",
+      "failed": "Anmeldung fehlgeschlagen."
+    }
+  },
+  "signup": {
+    "title": "Registrieren",
+    "fields": {
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "username": "Benutzername",
+      "email": "E-Mail",
+      "phone": "Telefonnummer",
+      "password": "Passwort",
+      "birthdate": "Geburtsdatum",
+      "language": "Sprache",
+      "dialCode": "Vorwahl",
+      "country": "Land"
+    },
+    "submit": "Registrieren",
+    "errors": {
+      "required": "Bitte füllen Sie alle erforderlichen Felder aus.",
+      "invalidEmail": "Ungültige E-Mail",
+      "weakPassword": "Das Passwort muss mindestens 8 Zeichen lang sein, eine Zahl und ein Sonderzeichen enthalten",
+      "failed": "Registrierung fehlgeschlagen."
+    }
+  }
 }
