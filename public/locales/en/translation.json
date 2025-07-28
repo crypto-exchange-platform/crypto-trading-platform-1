@@ -1,0 +1,200 @@
+{
+  "header": {
+    "homepage": "Homepage",
+    "brand": "Token",
+    "login": "Log in",
+    "signup": "Sign up"
+  },
+  "nav": {
+    "buyCrypto": "Buy crypto",
+    "markets": "Markets",
+    "trade": "Trade",
+    "futures": "Futures",
+    "earn": "Earn"
+  },
+  "hero": {
+    "heading": "Spin & Score! 100% Guaranteed Prize",
+    "subheading": "Win Popular Tokens Like ADA, XRP, SOL, and More.",
+    "placeholder": "Email/Phone number",
+    "cta": "Start now",
+    "imageAlt": "Spin reward visual",
+    "promotions": [
+      { "title": "WIN 20 USDT!", "subtitle": "Click here to claim" },
+      {
+        "title": "VIP TRADING CHALLENGE",
+        "subtitle": "Win an Omega watch & share 8,000 USDT in rewards!"
+      },
+      {
+        "title": "RAMADAN BLESSINGS",
+        "subtitle": "Simpler tasks, greater rewards"
+      },
+      {
+        "title": "BECOME BITGET VIP CLIENT",
+        "subtitle": "Get 8,000 USDT as a welcome kit!"
+      }
+    ]
+  },
+  "market": {
+    "tabs": ["Popular", "Gainers", "Newly listed"],
+    "headers": {
+      "name": "Name",
+      "lastPrice": "Last price",
+      "change": "Change",
+      "volume": "24h volume",
+      "action": "Action"
+    },
+    "details": "Details",
+    "explore": "Explore over 800 assets →"
+  },
+  "copyTrading": {
+    "heading": "Smart Trading Starts with Copy Trading",
+    "subheading": "Copy top traders and discover strategies to earn like a pro effortlessly.",
+    "profit": "30d copiers profit",
+    "roi": "30D ROI",
+    "chartAlt": "Performance chart",
+    "copyButton": "Copy",
+    "traders": [
+      {
+        "name": "BGUSER-SSAL7LSL",
+        "position": "1/300",
+        "profit": "+$1.38",
+        "roi": "+353.28%",
+        "chart": "/chart.png"
+      },
+      {
+        "name": "freezia",
+        "position": "1/350",
+        "profit": "+$15.77",
+        "roi": "+332.45%",
+        "chart": "/chart.png"
+      },
+      {
+        "name": "BGUSER-3E97LLZW",
+        "position": "11/300",
+        "profit": "+$35.43",
+        "roi": "+331.86%",
+        "chart": "/chart.png"
+      },
+      {
+        "name": "Laura#橘喵边",
+        "position": "3/200",
+        "profit": "+$12.71",
+        "roi": "+307.91%",
+        "chart": "/chart.png"
+      }
+    ]
+  },
+  "journey": {
+    "tabs": {
+      "exchange": "Exchange",
+      "web3": "Web3"
+    },
+    "exchange": {
+      "heading": "Start your crypto journey here",
+      "points": [
+        { "label": "Fiat", "text": "Over 140 fiat currencies supported" },
+        { "label": "Trade", "text": "Futures, spot, margin, bot..." },
+        {
+          "label": "Earn",
+          "text": "Boost your crypto profits safely and easily!"
+        }
+      ]
+    },
+    "web3": {
+      "heading": "Enter the Web3 Ecosystem",
+      "points": [
+        {
+          "label": "DeFi",
+          "text": "Access decentralized finance protocols securely"
+        },
+        { "label": "NFTs", "text": "Trade and store NFTs with full ownership" },
+        {
+          "label": "Wallet",
+          "text": "Manage crypto assets with non-custodial wallets"
+        }
+      ]
+    },
+    "imageAlt": "Exchange UI preview",
+    "cta": "Sign up now"
+  },
+  "trust": {
+    "heading": "Safe and reliable",
+    "subheading": "We are committed to safeguarding your assets and ensuring the security of your information.",
+    "imageAlt": "Security Illustration",
+    "items": [
+      {
+        "title": "Protection Fund",
+        "description": "Our $546 M Protection Fund ensures the security of your assets"
+      },
+      {
+        "title": "Proof of Reserves",
+        "description": "We guarantee at least a 1:1 reserve ratio of our customer funds."
+      },
+      {
+        "title": "Cold storage",
+        "description": "We store most digital assets in offline, multi-signature wallets."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "FAQ",
+    "items": [
+      {
+        "question": "What is a cryptocurrency exchange?",
+        "answer": "A cryptocurrency exchange is a platform where you can buy, sell, and trade digital assets like Bitcoin, Ethereum, and more."
+      },
+      {
+        "question": "What products does Bitget offer?",
+        "answer": "Bitget offers spot trading, futures, copy trading, staking, and a variety of earn products tailored for both beginners and pros."
+      },
+      {
+        "question": "How to buy Bitcoin and other cryptocurrencies on Bitget?",
+        "answer": "Simply create an account, complete identity verification, then use fiat methods like credit cards or P2P to buy crypto."
+      },
+      {
+        "question": "How do you track cryptocurrency prices?",
+        "answer": "You can track prices in real-time on Bitget using the live charts, watchlists, and market overview pages."
+      },
+      {
+        "question": "How to trade cryptocurrencies on Bitget?",
+        "answer": "Choose between spot or futures markets, analyze charts, place market or limit orders, and manage your positions in the trading UI."
+      },
+      {
+        "question": "How to earn with crypto on Bitget?",
+        "answer": "You can earn through staking, copy trading, saving products, or participating in promotions and campaigns."
+      },
+      {
+        "question": "Why choose Bitget as your cryptocurrency exchange?",
+        "answer": "Bitget offers security, low fees, a user-friendly interface, and tools like copy trading to support your trading journey."
+      }
+    ]
+  },
+  "footer": {
+    "links": [
+      { "title": "Company", "links": ["About Us", "Careers", "Blog", "Press"] },
+      {
+        "title": "Products",
+        "links": ["Spot Trading", "Futures", "Copy Trading", "Earn"]
+      },
+      {
+        "title": "Copy",
+        "links": ["Top Traders", "How It Works", "Leaderboard"]
+      },
+      {
+        "title": "Services",
+        "links": ["Referral Program", "VIP Club", "Academy"]
+      },
+      {
+        "title": "Legal and Compliance",
+        "links": ["Terms of Service", "Privacy Policy", "Licenses"]
+      },
+      {
+        "title": "Tools",
+        "links": ["Fee Calculator", "API Docs", "Download App"]
+      }
+    ],
+    "rights": "All rights reserved.",
+    "language": "English",
+    "change": "Change"
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "header": {
+    "homepage": "Página principal",
+    "brand": "Token",
+    "login": "Iniciar sesión",
+    "signup": "Registrarse"
+  },
+  "nav": {
+    "buyCrypto": "Comprar cripto",
+    "markets": "Mercados",
+    "trade": "Comercio",
+    "futures": "Futuros",
+    "earn": "Ganar"
+  },
+  "hero": {
+    "heading": "¡Gira y gana! Premio garantizado al 100%",
+    "subheading": "Gana tokens populares como ADA, XRP, SOL y más.",
+    "placeholder": "Correo/Teléfono",
+    "cta": "Comenzar ahora",
+    "imageAlt": "Visual de premio giratorio",
+    "promotions": [
+      { "title": "¡GANA 20 USDT!", "subtitle": "Haz clic aquí para reclamar" },
+      {
+        "title": "DESAFÍO VIP DE TRADING",
+        "subtitle": "Gana un reloj Omega y comparte 8.000 USDT en premios"
+      },
+      {
+        "title": "BENDICIONES DE RAMADÁN",
+        "subtitle": "Tareas más simples, mayores recompensas"
+      },
+      {
+        "title": "CONVIÉRTETE EN CLIENTE VIP DE BITGET",
+        "subtitle": "Recibe 8.000 USDT como kit de bienvenida"
+      }
+    ]
+  },
+  "market": {
+    "tabs": ["Popular", "Ganadores", "Nuevos listados"],
+    "headers": {
+      "name": "Nombre",
+      "lastPrice": "Último precio",
+      "change": "Cambio",
+      "volume": "Volumen 24h",
+      "action": "Acción"
+    },
+    "details": "Detalles",
+    "explore": "Explora más de 800 activos →"
+  },
+  "copyTrading": {
+    "heading": "El trading inteligente comienza con Copy Trading",
+    "subheading": "Copia a los mejores traders y descubre estrategias para ganar como un profesional sin esfuerzo.",
+    "profit": "Ganancia de copiadores 30d",
+    "roi": "ROI 30D",
+    "chartAlt": "Gráfico de rendimiento",
+    "copyButton": "Copiar",
+    "traders": []
+  },
+  "journey": {
+    "tabs": {
+      "exchange": "Intercambio",
+      "web3": "Web3"
+    },
+    "exchange": {
+      "heading": "Comienza tu viaje cripto aquí",
+      "points": [
+        {
+          "label": "Fiat",
+          "text": "Más de 140 monedas fiduciarias soportadas"
+        },
+        { "label": "Comercio", "text": "Futuros, spot, margen, bot..." },
+        {
+          "label": "Ganar",
+          "text": "Aumenta tus ganancias cripto de forma segura y sencilla"
+        }
+      ]
+    },
+    "web3": {
+      "heading": "Entra en el ecosistema Web3",
+      "points": [
+        {
+          "label": "DeFi",
+          "text": "Accede a protocolos financieros descentralizados de forma segura"
+        },
+        {
+          "label": "NFTs",
+          "text": "Comercia y almacena NFTs con plena propiedad"
+        },
+        {
+          "label": "Cartera",
+          "text": "Gestiona activos cripto con carteras no custodiadas"
+        }
+      ]
+    },
+    "imageAlt": "Vista previa de la interfaz",
+    "cta": "Regístrate ahora"
+  },
+  "trust": {
+    "heading": "Seguro y confiable",
+    "subheading": "Estamos comprometidos a proteger tus activos y garantizar la seguridad de tu información.",
+    "imageAlt": "Ilustración de seguridad",
+    "items": [
+      {
+        "title": "Fondo de protección",
+        "description": "Nuestro Fondo de Protección de $546 M garantiza la seguridad de tus activos"
+      },
+      {
+        "title": "Prueba de reservas",
+        "description": "Garantizamos al menos una proporción de reservas 1:1 de los fondos de clientes"
+      },
+      {
+        "title": "Almacenamiento en frío",
+        "description": "La mayoría de los activos digitales se almacenan en carteras fuera de línea y multi-firma"
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Preguntas frecuentes",
+    "items": [
+      {
+        "question": "¿Qué es un exchange de criptomonedas?",
+        "answer": "Un exchange de criptomonedas es una plataforma donde puedes comprar, vender e intercambiar activos digitales como Bitcoin, Ethereum y más."
+      },
+      {
+        "question": "¿Qué productos ofrece Bitget?",
+        "answer": "Bitget ofrece trading spot, futuros, copy trading, staking y una variedad de productos para ganar, diseñados tanto para principiantes como para profesionales."
+      },
+      {
+        "question": "¿Cómo comprar Bitcoin y otras criptomonedas en Bitget?",
+        "answer": "Simplemente crea una cuenta, completa la verificación de identidad y utiliza métodos fiat como tarjetas de crédito o P2P para comprar criptomonedas."
+      },
+      {
+        "question": "¿Cómo seguir los precios de criptomonedas?",
+        "answer": "Puedes seguir los precios en tiempo real en Bitget usando gráficos en vivo, listas de seguimiento y páginas de resumen de mercado."
+      },
+      {
+        "question": "¿Cómo operar con criptomonedas en Bitget?",
+        "answer": "Elige entre mercados spot o de futuros, analiza gráficos, coloca órdenes de mercado o límite y gestiona tus posiciones en la interfaz de trading."
+      },
+      {
+        "question": "¿Cómo ganar con criptomonedas en Bitget?",
+        "answer": "Puedes ganar a través de staking, copy trading, productos de ahorro o participando en promociones y campañas."
+      },
+      {
+        "question": "¿Por qué elegir Bitget como tu exchange de criptomonedas?",
+        "answer": "Bitget ofrece seguridad, bajas comisiones, una interfaz fácil de usar y herramientas como copy trading para apoyar tu viaje de trading."
+      }
+    ]
+  },
+"footer": {
+  "links": [
+    { "title": "Compañía", "links": ["Sobre nosotros", "Carreras", "Blog", "Prensa"] },
+    { "title": "Productos", "links": ["Trading Spot", "Futuros", "Copy Trading", "Ganar"] },
+    { "title": "Copy", "links": ["Mejores traders", "Cómo funciona", "Tabla de clasificación"] },
+    { "title": "Servicios", "links": ["Programa de referidos", "Club VIP", "Academia"] },
+    { "title": "Legal y Cumplimiento", "links": ["Términos de servicio", "Política de privacidad", "Licencias"] },
+    { "title": "Herramientas", "links": ["Calculadora de tarifas", "Documentos API", "Descargar app"] }
+  ],
+  "rights": "Todos los derechos reservados.",
+  "language": "Español",
+  "change": "Cambiar"
+}
+}
