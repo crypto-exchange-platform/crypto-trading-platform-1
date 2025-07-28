@@ -146,17 +146,69 @@
       }
     ]
   },
-"footer": {
-  "links": [
-    { "title": "Compañía", "links": ["Sobre nosotros", "Carreras", "Blog", "Prensa"] },
-    { "title": "Productos", "links": ["Trading Spot", "Futuros", "Copy Trading", "Ganar"] },
-    { "title": "Copy", "links": ["Mejores traders", "Cómo funciona", "Tabla de clasificación"] },
-    { "title": "Servicios", "links": ["Programa de referidos", "Club VIP", "Academia"] },
-    { "title": "Legal y Cumplimiento", "links": ["Términos de servicio", "Política de privacidad", "Licencias"] },
-    { "title": "Herramientas", "links": ["Calculadora de tarifas", "Documentos API", "Descargar app"] }
-  ],
-  "rights": "Todos los derechos reservados.",
-  "language": "Español",
-  "change": "Cambiar"
-}
+  "footer": {
+    "links": [
+      {
+        "title": "Compañía",
+        "links": ["Sobre nosotros", "Carreras", "Blog", "Prensa"]
+      },
+      {
+        "title": "Productos",
+        "links": ["Trading Spot", "Futuros", "Copy Trading", "Ganar"]
+      },
+      {
+        "title": "Copy",
+        "links": ["Mejores traders", "Cómo funciona", "Tabla de clasificación"]
+      },
+      {
+        "title": "Servicios",
+        "links": ["Programa de referidos", "Club VIP", "Academia"]
+      },
+      {
+        "title": "Legal y Cumplimiento",
+        "links": ["Términos de servicio", "Política de privacidad", "Licencias"]
+      },
+      {
+        "title": "Herramientas",
+        "links": ["Calculadora de tarifas", "Documentos API", "Descargar app"]
+      }
+    ],
+    "rights": "Todos los derechos reservados.",
+    "language": "Español",
+    "change": "Cambiar"
+  },
+  "login": {
+    "title": "Iniciar sesión",
+    "fields": {
+      "emailOrUsername": "Correo o nombre de usuario",
+      "password": "Contraseña"
+    },
+    "submit": "Iniciar sesión",
+    "errors": {
+      "required": "Por favor completa todos los campos requeridos.",
+      "failed": "Error al iniciar sesión."
+    }
+  },
+  "signup": {
+    "title": "Registrarse",
+    "fields": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "username": "Nombre de usuario",
+      "email": "Correo electrónico",
+      "phone": "Número de teléfono",
+      "password": "Contraseña",
+      "birthdate": "Fecha de nacimiento",
+      "language": "Idioma",
+      "dialCode": "Código de marcado",
+      "country": "País"
+    },
+    "submit": "Registrarse",
+    "errors": {
+      "required": "Por favor completa todos los campos requeridos.",
+      "invalidEmail": "Correo electrónico inválido",
+      "weakPassword": "La contraseña debe tener al menos 8 caracteres, incluir un número y un carácter especial",
+      "failed": "Error en el registro."
+    }
+  }
 }
