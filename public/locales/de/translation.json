@@ -1,0 +1,156 @@
+{
+  "header": {
+    "homepage": "Startseite",
+    "brand": "Token",
+    "login": "Anmelden",
+    "signup": "Registrieren"
+  },
+  "nav": {
+    "buyCrypto": "Krypto kaufen",
+    "markets": "Märkte",
+    "trade": "Handel",
+    "futures": "Futures",
+    "earn": "Verdienen"
+  },
+  "hero": {
+    "heading": "Drehen & Gewinnen! 100% garantierter Preis",
+    "subheading": "Gewinne beliebte Tokens wie ADA, XRP, SOL und mehr.",
+    "placeholder": "E-Mail/Telefonnummer",
+    "cta": "Jetzt starten",
+    "imageAlt": "Drehpreis-Visualisierung",
+    "promotions": [
+      { "title": "GEWINNE 20 USDT!", "subtitle": "Hier klicken zum Einlösen" },
+      {
+        "title": "VIP TRADING CHALLENGE",
+        "subtitle": "Gewinne eine Omega-Uhr und teile 8.000 USDT an Prämien"
+      },
+      {
+        "title": "RAMADAN SEGUNGEN",
+        "subtitle": "Einfachere Aufgaben, größere Belohnungen"
+      },
+      {
+        "title": "WERDE BITGET VIP-KUNDE",
+        "subtitle": "Erhalte 8.000 USDT als Willkommenspaket"
+      }
+    ]
+  },
+  "market": {
+    "tabs": ["Beliebt", "Gewinner", "Neu gelistet"],
+    "headers": {
+      "name": "Name",
+      "lastPrice": "Letzter Preis",
+      "change": "Änderung",
+      "volume": "24h Volumen",
+      "action": "Aktion"
+    },
+    "details": "Details",
+    "explore": "Entdecke über 800 Assets →"
+  },
+  "copyTrading": {
+    "heading": "Smartes Trading beginnt mit Copy Trading",
+    "subheading": "Kopiere Top-Trader und entdecke Strategien, um mühelos wie ein Profi zu verdienen.",
+    "profit": "30T Kopierer-Gewinn",
+    "roi": "30T ROI",
+    "chartAlt": "Leistungsdiagramm",
+    "copyButton": "Kopieren",
+    "traders": []
+  },
+  "journey": {
+    "tabs": {
+      "exchange": "Börse",
+      "web3": "Web3"
+    },
+    "exchange": {
+      "heading": "Beginne hier deine Krypto-Reise",
+      "points": [
+        { "label": "Fiat", "text": "Über 140 Fiat-Währungen unterstützt" },
+        { "label": "Handel", "text": "Futures, Spot, Margin, Bot..." },
+        {
+          "label": "Verdienen",
+          "text": "Erhöhe deine Krypto-Gewinne sicher und einfach"
+        }
+      ]
+    },
+    "web3": {
+      "heading": "Betrete das Web3-Ökosystem",
+      "points": [
+        { "label": "DeFi", "text": "Zugang zu dezentralen Finanzprotokollen" },
+        {
+          "label": "NFTs",
+          "text": "NFTs handeln und speichern mit vollem Eigentum"
+        },
+        {
+          "label": "Wallet",
+          "text": "Krypto-Assets mit nicht verwahrenden Wallets verwalten"
+        }
+      ]
+    },
+    "imageAlt": "Börsen-UI Vorschau",
+    "cta": "Jetzt registrieren"
+  },
+  "trust": {
+    "heading": "Sicher und zuverlässig",
+    "subheading": "Wir setzen uns für den Schutz deiner Assets und die Sicherheit deiner Daten ein.",
+    "imageAlt": "Sicherheitsillustration",
+    "items": [
+      {
+        "title": "Schutzfonds",
+        "description": "Unser $546 M Schutzfonds sichert deine Assets"
+      },
+      {
+        "title": "Reservenachweis",
+        "description": "Wir garantieren mindestens ein 1:1-Reservenverhältnis der Kundengelder"
+      },
+      {
+        "title": "Cold Storage",
+        "description": "Die meisten digitalen Assets werden offline in Multi-Signatur-Wallets gespeichert"
+      }
+    ]
+  },
+  "faq": {
+    "heading": "FAQ",
+    "items": [
+      {
+        "question": "Was ist eine Kryptowährungsbörse?",
+        "answer": "Eine Kryptowährungsbörse ist eine Plattform, auf der Sie digitale Vermögenswerte wie Bitcoin, Ethereum und mehr kaufen, verkaufen und handeln können."
+      },
+      {
+        "question": "Welche Produkte bietet Bitget an?",
+        "answer": "Bitget bietet Spot-Handel, Futures, Copy Trading, Staking und eine Vielzahl von Earn-Produkten für Anfänger und Profis."
+      },
+      {
+        "question": "Wie kaufe ich Bitcoin und andere Kryptowährungen auf Bitget?",
+        "answer": "Erstellen Sie einfach ein Konto, führen Sie die Identitätsprüfung durch und verwenden Sie Fiat-Methoden wie Kreditkarten oder P2P, um Kryptowährungen zu kaufen."
+      },
+      {
+        "question": "Wie verfolge ich Kryptowährungspreise?",
+        "answer": "Sie können Preise in Echtzeit auf Bitget über Live-Charts, Watchlists und Marktübersichten verfolgen."
+      },
+      {
+        "question": "Wie handelt man Kryptowährungen auf Bitget?",
+        "answer": "Wählen Sie zwischen Spot- oder Futures-Märkten, analysieren Sie Charts, platzieren Sie Markt- oder Limit-Orders und verwalten Sie Ihre Positionen in der Handelsoberfläche."
+      },
+      {
+        "question": "Wie verdient man mit Krypto auf Bitget?",
+        "answer": "Sie können durch Staking, Copy Trading, Sparprodukte oder die Teilnahme an Aktionen und Kampagnen verdienen."
+      },
+      {
+        "question": "Warum Bitget als Ihre Kryptowährungsbörse wählen?",
+        "answer": "Bitget bietet Sicherheit, niedrige Gebühren, eine benutzerfreundliche Oberfläche und Tools wie Copy Trading zur Unterstützung Ihres Handels."
+      }
+    ]
+  },
+ "footer": {
+  "links": [
+    { "title": "Unternehmen", "links": ["Über uns", "Karriere", "Blog", "Presse"] },
+    { "title": "Produkte", "links": ["Spot-Handel", "Futures", "Copy Trading", "Verdienen"] },
+    { "title": "Copy", "links": ["Top Trader", "Wie es funktioniert", "Bestenliste"] },
+    { "title": "Dienstleistungen", "links": ["Empfehlungsprogramm", "VIP Club", "Akademie"] },
+    { "title": "Recht und Compliance", "links": ["Nutzungsbedingungen", "Datenschutzrichtlinie", "Lizenzen"] },
+    { "title": "Werkzeuge", "links": ["Gebührenrechner", "API-Dokumente", "App herunterladen"] }
+  ],
+  "rights": "Alle Rechte vorbehalten.",
+  "language": "Deutsch",
+  "change": "Ändern"
+}
+}
